@@ -1,1 +1,83 @@
 
+.bod{
+    background:  url('../../assets/hunters-race-408744-unsplash.jpg'); 
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    filter: blur(.3rem) grayscale(1);
+    z-index: -3;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .contents{
+        img{
+            height: 15rem;
+            width: 15rem;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .title{
+            color: white;
+            font-size: 4rem;
+            text-align: center;
+            margin: 0 .5rem;
+        }
+
+        .slogan{
+            color: white;
+            font-size: 2rem;
+        }
+
+        .input{
+            position: relative;
+            display: block;
+            margin: 1rem auto;
+            background: none;
+            border: none;
+            color: white;
+            border-bottom: 2px solid rgba(white, .3);
+            font-size: 2rem;
+            width: 75%;
+            &::placeholder{
+                color: var(--divider-color);
+            }
+
+            &:focus{
+                outline:none; 
+
+                &:invalid{
+                    border-bottom: 2px solid rgba(red, .8);  
+                }
+
+                &:invalid + label{
+                    color: red;
+                }
+            }
+            &:focus + label{
+                // color: yellow;
+                font-size: 2.5rem;
+                // position: absolute;
+                left: 5.5rem;
+                transform: translateY(-7rem);
+            }
+        }
+    }
+} 
+
+.label{
+    position: absolute;
+    // background: white;
+    color: white;
+    transition: .3s ease all;
+    transform: scale(0); 
+    transform: translateY(0rem);
+}
